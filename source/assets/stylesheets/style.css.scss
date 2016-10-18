@@ -2,16 +2,12 @@
 //@import "normalize";
 
 /* FONTS */
-@import url(https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i);
-@import url(https://fonts.googleapis.com/css?family=Kreon:300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i);
-
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:300i,400,400i,800|Merriweather:300i,400,400i,700');
 /* VARIABLES */
 
 /* font-colors */
 $font_color-normal: #222233;
-$font_color-alt: #9999aa;
-$font_color-inv: #ffffff;
+
 
 /* background-colors */
 $bg_color-normal: #ffffff;
@@ -23,9 +19,8 @@ $brand_color-main: #0065ff;
 $brand_color-alt: #f3ffff;
 
 /* font-families */
-$font-headline: "Kreon", sans-serif;
-$font-copy: "Lato", sans-serif;
-$font-code: "Space Mono", monospace;
+$font-headline: "Merriweather Sans", sans-serif;
+$font-copy: "Merriweather", sans-serif;
 
 /* font-sizes */
 $font_size-xs: 0.875rem;
@@ -140,51 +135,49 @@ body {
   line-height: $line_height-m;
 }
 
-h1, h2, h3, h4 {
+h1 {
   font-family: $font-headline;
+  font-size: $font_size-xl;
+  font-weight: 700;
+  text-align: center;
   line-height: $line_height-s;
   padding-top: $margin-m;
+  margin-bottom: $margin-l;
+}
+
+h2 {
+  font-family: $font-headline;
+  line-height: $line_height-s;
+  font-size: $font_size-m;
+  font-weight: 700;
+  padding-top: $margin-m;
   margin-bottom: $margin-m;
+}
+
+h3 {
+  font-family: $font-headline;
+  line-height: $line_height-s;
+  font-size: $font_size-s;
+  font-weight: 300;
+  font-style: italic;
+  padding-top: $margin-m;
+  margin-bottom: $margin-s;
+}
+
+h4 {
+  font-family: $font-headline;
+  line-height: $line_height-s;
+  font-family: 'Merriweather';
+  padding-top: $margin-m;
+  margin-bottom: $margin-s;
 }
 
 h5, h6 {
   margin-bottom: $margin-s;
 }
 
-h1 {
-  font-size: $font_size-xxl;
-  font-weight: 700;
-}
-
-h2 {
-  color: $brand_color-main;
-  font-size: $font_size-xl;
-}
-
-h3 {
-  font-size: $font_size-l;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-h4 {
-  font-size: $font_size-l;
-  font-weight: 700;
-}
-
-h5 {
-  font-size: $font_size-m;
-  font-weight: 900;
-}
-
-h6 {
-  font-size: $font_size-m;
-  font-weight: 700;
-  font-style: italic;
-}
-
 p {
-  font-size: $font_size-m;
+  font-size: $font_size-s;
   line-height: $line_height-l;
   margin-bottom: $margin-m;
 }
@@ -198,27 +191,43 @@ em {
 }
 
 strong em, em strong {
-  font-weight: 900;
+  font-weight: 700;
   font-style: italic;
 }
 
 blockquote {
   display: flex;
-  border-left: 2px solid $brand_color-main;
   margin: $margin-s 0 $margin-m 0;
 
   p {
-    font-family: $font-code;
     font-size: $font_size-m;
     line-height: $line_height-m;
+    font-family: 'Merriweather';
+    font-style: italic;
+    font-weight: 300;
     padding: $margin-m;
     margin: 0;
   }
 }
 
+cite {
+  font-size: $font_size-s;
+  line-height: $line_height-m;
+  font-family: 'Merriweather Sans';
+  font-style: italic;
+  font-weight: 300;
+  padding: $margin-m;
+  margin: 0;
+}
+
 hr {
-  border-bottom: 2px solid $font_color-alt;
   margin: $margin-l;
+  text-align: center;
+}
+
+hr:after {
+  content: "* * *";
+  color: #222233;
 }
 
 ul, ol {
@@ -268,14 +277,14 @@ table {
   line-height: $line_height-m;
   text-align: left;
   border-collapse: collapse;
-  border-top: 1px solid $font_color-alt;
-  border-bottom: 1px solid $font_color-alt;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   margin-bottom: $margin-m;
 
   th {
     padding: $margin-m $margin-s $margin-m $margin-s;
     font-weight: 700;
-    border-bottom: 1px solid $font_color-alt;
+    border-bottom: 1px solid;
     vertical-align: top;
   }
 
@@ -285,17 +294,10 @@ table {
   }
 }
 
-code {
-  color: $font_color-normal;
-  font-family: $font-code;
-  padding: 0 $margin-s 0 $margin-s;
-  background-color: $bg_color-alt;
-  border-radius: 3px;
-}
 
 pre code {
   padding: $margin-s;
-  border: 1px solid $font_color-alt;
+  border: 1px solid;
   display: block;
   margin-bottom: $margin-m;
   text-align: left;
@@ -321,7 +323,7 @@ select, textarea, input[type=text], input[type=submit], button {
   padding: $margin-s;
   margin-bottom: $margin-s;
   background-color: $bg_color-normal;
-  border: 1px solid $font_color-alt;
+  border: 1px solid;
   border-radius: 3px;
 }
 
@@ -342,12 +344,11 @@ input[type=submit], button {
 }
 
 input[type=submit]:hover, button:hover {
-  color: $font_color-inv;
   background-color: $bg_color-inv;
 }
 
 img {
-  margin: 0 auto $margin-m auto;
+  margin: 0 auto $margin-l auto;
 }
 
 a {
@@ -356,7 +357,7 @@ a {
   border-bottom: 1px solid currentColor;
 
   &:hover {
-    border-bottom: 1px solid $brand_color-main;
+    border-bottom: transparent;
   }
 }
 
@@ -367,13 +368,6 @@ a {
   color: $font_color-normal;
 }
 
-.font_color-alt {
-  color: $font_color-alt;
-}
-
-.font_color-inv {
-  color: $font_color-inv;
-}
 
 /* background-colors */
 .bg_color-normal {
@@ -384,15 +378,6 @@ a {
   background-color: $bg_color-alt;
 }
 
-.bg_color-inv {
-  color: $font_color-inv;
-  background-color: $bg_color-inv;
-}
-
-.bg_color-brand-main {
-  color: $font_color-inv;
-  background-color: $brand_color-main;
-}
 
 .bg_color-brand-alt {
   background-color: $brand_color-alt;
@@ -451,14 +436,12 @@ a {
 
   &:hover {
     border: none;
-    color: $font_color-inv;
     background-color: $bg_color-inv;
   }
 }
 
 .button, .btn {
   background-color: $brand_color-main;
-  color: $font_color-inv;
 }
 
 .button-secondary, .btn-secondary {
@@ -511,6 +494,8 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   list-style: none;
+  font-family: 'Merriweather Sans';
+  font-size: $font_size-s;
   margin: 0 0 $margin-m 0;
   overflow-x: hidden;
   padding: 0;
@@ -519,14 +504,18 @@ a {
     flex-direction: row;
   }
 
+  &.navigation-horizontal-center, &.nav-horizontal-center {
+    flex-direction: row;
+    align: center;
+  }
+
   li {
     &:before {
       content: none;
     }
 
     a {
-      border-bottom: none;
-      border-radius: 3px;
+      border-bottom: transparent;
       display: block;
       font-weight: 700;
       line-height: $line_height-s;
@@ -534,8 +523,7 @@ a {
       word-wrap: break-word;
 
       &:hover {
-        background-color: $brand_color-main;
-        color: $font_color-inv;
+        border-bottom: 2px solid;
       }
     }
   }
