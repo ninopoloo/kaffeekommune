@@ -518,7 +518,7 @@ a {
     }
 
     a {
-      border-bottom: transparent;
+      border-bottom: 2px solid transparent;
       display: block;
       font-weight: 700;
       line-height: $line_height-s;
@@ -598,4 +598,15 @@ a {
       flex-direction: column;
     }
   }
+}
+
+
+
+
+// Custom Styles
+.topbar img {
+  margin-bottom: 0;
+}
+.topbar a {
+
 }
