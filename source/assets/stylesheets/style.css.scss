@@ -23,7 +23,7 @@ $font-headline: "Merriweather Sans", sans-serif;
 $font-copy: "Merriweather", sans-serif;
 
 /* font-sizes */
-$font_size-xs: 0.875rem;
+$font_size-xs: 0.5rem;
 $font_size-s: 1rem;
 $font_size-m: 1.125rem;
 $font_size-l: 1.375rem;
@@ -31,7 +31,7 @@ $font_size-xl: 1.75rem;
 $font_size-xxl: 3rem;
 
 /* line-heighfont_size-s */
-$line_height-s: 120%;
+$line_height-s: 125%;
 $line_height-m: 140%;
 $line_height-l: 160%;
 
@@ -200,7 +200,7 @@ blockquote {
   margin: $margin-s 0 $margin-m 0;
 
   p {
-    font-size: $font_size-m;
+    font-size: $font_size-l;
     line-height: $line_height-m;
     font-family: 'Merriweather';
     font-style: italic;
@@ -354,10 +354,12 @@ img {
 a {
   color: currentColor;
   text-decoration: none;
-  border-bottom: 1px solid currentColor;
+  font-weight: 800;
+  font-size: 0.92em;
+  border-bottom: transparent;
 
   &:hover {
-    border-bottom: transparent;
+    border-bottom: 1px solid currentColor;
   }
 }
 
@@ -402,6 +404,10 @@ a {
 }
 
 /* paragraphs */
+.font_size-xs {
+  font-size: $font_size-xs;
+}
+
 .font_size-s {
   font-size: $font_size-s;
 }
@@ -499,7 +505,7 @@ a {
   list-style: none;
   font-family: 'Merriweather Sans';
   font-size: $font_size-s;
-  margin: 0 0 $margin-m 0;
+  margin: 0 0 $margin-l 0;
   overflow-x: hidden;
   padding: 0;
 
@@ -512,6 +518,14 @@ a {
     align: center;
   }
 
+  &.menu {
+    padding: $margin-s;
+  }
+
+  &.menu .a {
+    padding: $margin-s;
+  }
+
   li {
     &:before {
       content: none;
@@ -522,7 +536,7 @@ a {
       display: block;
       font-weight: 700;
       line-height: $line_height-s;
-      padding: $margin-s;
+      padding: $margin-m;
       word-wrap: break-word;
 
       &:hover {
