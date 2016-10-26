@@ -430,6 +430,10 @@ a {
   line-height: $line_height-m;
 }
 
+.indent_s {
+  padding-left: $margin-s;
+}
+
 /* buttons */
 .button, .button-secondary, .button-tertiary,
 .btn, .btn-secondary, .btn-tertiary {
