@@ -64,7 +64,7 @@ hfont_size-ml, body {
 }
 
 img {
-  display: block;
+  display: inline-block;
   max-width: 100%;
 }
 
@@ -166,7 +166,7 @@ h3 {
 
 h4 {
   font-family: $font-headline;
-  line-height: $line_height-s;
+  line-height: 0.87rem;
   font-family: 'Merriweather';
   padding-top: $margin-m;
   margin-bottom: $margin-s;
@@ -432,6 +432,7 @@ a {
 
 .indent_s {
   padding-left: $margin-s;
+  font-size: 0.87rem;
 }
 
 /* buttons */
